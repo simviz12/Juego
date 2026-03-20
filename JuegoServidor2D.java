@@ -1,11 +1,11 @@
-import com.sun.net.httpserver.HttpServer;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
+import com.sun.net.httpserver.HttpServer;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class JuegoServidor2D {
@@ -95,7 +95,27 @@ public class JuegoServidor2D {
         public void handle(HttpExchange exchange) throws IOException {
             if ("POST".equals(exchange.getRequestMethod())) {
                 try {
-                    String[] nombres = {"Goblin", "Orco", "Esqueleto", "Demonio", "Dragón", "Troll", "Mago Oscuro", "Lobo", "Murciélago", "Fantasma"};
+                    String[] nombres = {
+                        "Goblin", "Orco", "Esqueleto", "Demonio", "Dragón", "Troll", "Mago Oscuro", 
+                        "Lobo", "Murciélago", "Fantasma", "Gigante", "Ninja", "Pirata", "Vikingo",
+                        "Samurái", "Caballero", "Arquero", "Asesino", "Bruja", "Elemental",
+                        "Gárgola", "Minotauro", "Hidra", "Fénix", "Leviatán", "Kraken",
+                        "Cíclope", "Sátiro", "Dragón de Hielo", "Dragón de Fuego", "Ángel Caído",
+                        "Espectro", "Rey Zombie", "Reina Araña", "Ogro", "Duende", "Sombra",
+                        "Bestia", "Monstruo", "Criatura", "Abominación", "Terror", "Horror",
+                        "Necromante", "Hechicero", "Conjurador", "Invocador", "Chamán", "Sacerdote Oscuro",
+                        "Caballero Negro", "Guerrero", "Paladín Caído", "Mercenario", "Gladiador", "Barbaro",
+                        "Valkiria", "Amazona", "Cazadora", "Ranger", "Explorador", "Aventurero",
+                        "Alquimista", "Ingeniero", "Artificiero", "Mago de Guerra", "Hechicero de Sangre", "Brujo",
+                        "Tifón", "Cronos", "Hades", "Ares", "Zeus", "Poseidón",
+                        "Dragón Anciano", "Wyvern", "Dracolich", "Serpiente Gigante", "Bestia del Abismo", "Demonio Mayor",
+                        "Arcángel", "Serafín", "Querubín Caído", "Tentáculo", "Ojo Vigilante", "Guardián",
+                        "Golem de Piedra", "Golem de Fuego", "Golem de Hielo", "Golem de Sombra", "Constructo", "Autómata",
+                        "Faraón", "Momia", "Anubis", "Basilisco", "Quimera", "Grifo",
+                        "Centauro", "Sátiro Salvaje", "Fauno", "Ninfa", "Dríade", "Sirena",
+                        "Tritón", "Hombre Pez", "Kraken Menor", "Medusa", "Escorpión Gigante", "Araña Gigante",
+                        "Lobo Fenris", "Cerbero", "Pegaso", "Unicornio Caído", "HipoGrifo", "Fenix Menor"
+                    };
                     String nombre = nombres[random.nextInt(nombres.length)];
                     int vida = 3 + random.nextInt(4);
                     int critico = 1 + random.nextInt(3);
@@ -189,7 +209,27 @@ public class JuegoServidor2D {
         public void handle(HttpExchange exchange) throws IOException {
             if ("POST".equals(exchange.getRequestMethod())) {
                 try {
-                    String[] nombres = {"Goblin", "Orco", "Esqueleto", "Demonio", "Dragón", "Troll", "Mago Oscuro", "Lobo", "Murciélago", "Fantasma"};
+                    String[] nombres = {
+                        "Goblin", "Orco", "Esqueleto", "Demonio", "Dragón", "Troll", "Mago Oscuro", 
+                        "Lobo", "Murciélago", "Fantasma", "Gigante", "Ninja", "Pirata", "Vikingo",
+                        "Samurái", "Caballero", "Arquero", "Asesino", "Bruja", "Elemental",
+                        "Gárgola", "Minotauro", "Hidra", "Fénix", "Leviatán", "Kraken",
+                        "Cíclope", "Sátiro", "Dragón de Hielo", "Dragón de Fuego", "Ángel Caído",
+                        "Espectro", "Rey Zombie", "Reina Araña", "Ogro", "Duende", "Sombra",
+                        "Bestia", "Monstruo", "Criatura", "Abominación", "Terror", "Horror",
+                        "Necromante", "Hechicero", "Conjurador", "Invocador", "Chamán", "Sacerdote Oscuro",
+                        "Caballero Negro", "Guerrero", "Paladín Caído", "Mercenario", "Gladiador", "Barbaro",
+                        "Valkiria", "Amazona", "Cazadora", "Ranger", "Explorador", "Aventurero",
+                        "Alquimista", "Ingeniero", "Artificiero", "Mago de Guerra", "Hechicero de Sangre", "Brujo",
+                        "Tifón", "Cronos", "Hades", "Ares", "Zeus", "Poseidón",
+                        "Dragón Anciano", "Wyvern", "Dracolich", "Serpiente Gigante", "Bestia del Abismo", "Demonio Mayor",
+                        "Arcángel", "Serafín", "Querubín Caído", "Tentáculo", "Ojo Vigilante", "Guardián",
+                        "Golem de Piedra", "Golem de Fuego", "Golem de Hielo", "Golem de Sombra", "Constructo", "Autómata",
+                        "Faraón", "Momia", "Anubis", "Basilisco", "Quimera", "Grifo",
+                        "Centauro", "Sátiro Salvaje", "Fauno", "Ninfa", "Dríade", "Sirena",
+                        "Tritón", "Hombre Pez", "Kraken Menor", "Medusa", "Escorpión Gigante", "Araña Gigante",
+                        "Lobo Fenris", "Cerbero", "Pegaso", "Unicornio Caído", "HipoGrifo", "Fenix Menor"
+                    };
                     String nombre = nombres[random.nextInt(nombres.length)];
                     int vida = 2 + random.nextInt(6);
                     int critico = 1 + random.nextInt(4);
@@ -281,9 +321,11 @@ public class JuegoServidor2D {
                 "        .panel h3 { color: #ffe66d; margin-bottom: 15px; text-align: center; font-size: 0.9rem; }\n" +
                 "        .game-arena {\n" +
                 "            width: 800px; height: 600px;\n" +
-                "            background: linear-gradient(45deg, #2d1b69, #0f0f1e),\n" +
-                "                repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(78,205,196,0.1) 20px, rgba(78,205,196,0.1) 21px),\n" +
-                "                repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(255,107,107,0.1) 20px, rgba(255,107,107,0.1) 21px);\n" +
+                "            background: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=800&h=600&fit=crop'),\n" +
+                "                linear-gradient(rgba(45,27,105,0.7), rgba(15,15,30,0.7)),\n" +
+                "                repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(78,205,196,0.05) 20px, rgba(78,205,196,0.05) 21px),\n" +
+                "                repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(255,107,107,0.05) 20px, rgba(255,107,107,0.05) 21px);\n" +
+                "            background-size: cover, 100% 100%, auto auto, auto auto;\n" +
                 "            border: 4px solid #ff6b6b;\n" +
                 "            border-radius: 20px;\n" +
                 "            position: relative;\n" +
@@ -347,6 +389,216 @@ public class JuegoServidor2D {
                 "        .enemy-2d.murcielago::before { content: '🦇'; }\n" +
                 "        .enemy-2d.fantasma { background: linear-gradient(135deg, #9b59b6, #8e44ad); }\n" +
                 "        .enemy-2d.fantasma::before { content: '👻'; }\n" +
+                "        .enemy-2d.gigante { background: linear-gradient(135deg, #e74c3c, #c0392b); }\n" +
+                "        .enemy-2d.gigante::before { content: '👺'; }\n" +
+                "        .enemy-2d.ninja { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.ninja::before { content: '🥷'; }\n" +
+                "        .enemy-2d.pirata { background: linear-gradient(135deg, #8b4513, #654321); }\n" +
+                "        .enemy-2d.pirata::before { content: '🏴‍☠️'; }\n" +
+                "        .enemy-2d.vikingo { background: linear-gradient(135deg, #95a5a6, #7f8c8d); }\n" +
+                "        .enemy-2d.vikingo::before { content: '⚔️'; }\n" +
+                "        .enemy-2d.samurai { background: linear-gradient(135deg, #e67e22, #d35400); }\n" +
+                "        .enemy-2d.samurai::before { content: '🗡️'; }\n" +
+                "        .enemy-2d.caballero { background: linear-gradient(135deg, #3498db, #2980b9); }\n" +
+                "        .enemy-2d.caballero::before { content: '🛡️'; }\n" +
+                "        .enemy-2d.arquero { background: linear-gradient(135deg, #27ae60, #229954); }\n" +
+                "        .enemy-2d.arquero::before { content: '🏹'; }\n" +
+                "        .enemy-2d.asesino { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.asesino::before { content: '🗡️'; }\n" +
+                "        .enemy-2d.bruja { background: linear-gradient(135deg, #8e44ad, #9b59b6); }\n" +
+                "        .enemy-2d.bruja::before { content: '🧙‍♀️'; }\n" +
+                "        .enemy-2d.elemental { background: linear-gradient(135deg, #3498db, #e74c3c); }\n" +
+                "        .enemy-2d.elemental::before { content: '🌟'; }\n" +
+                "        .enemy-2d.gargola { background: linear-gradient(135deg, #7f8c8d, #95a5a6); }\n" +
+                "        .enemy-2d.gargola::before { content: '🗿'; }\n" +
+                "        .enemy-2d.minotauro { background: linear-gradient(135deg, #8b4513, #a0522d); }\n" +
+                "        .enemy-2d.minotauro::before { content: '🐂'; }\n" +
+                "        .enemy-2d.hidra { background: linear-gradient(135deg, #27ae60, #16a085); }\n" +
+                "        .enemy-2d.hidra::before { content: '🐍'; }\n" +
+                "        .enemy-2d.fenix { background: linear-gradient(135deg, #e74c3c, #f39c12); }\n" +
+                "        .enemy-2d.fenix::before { content: '🔥'; }\n" +
+                "        .enemy-2d.leviatan { background: linear-gradient(135deg, #3498db, #2980b9); }\n" +
+                "        .enemy-2d.leviatan::before { content: '🌊'; }\n" +
+                "        .enemy-2d.kraken { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.kraken::before { content: '🐙'; }\n" +
+                "        .enemy-2d.ciclope { background: linear-gradient(135deg, #e74c3c, #c0392b); }\n" +
+                "        .enemy-2d.ciclope::before { content: '👁️'; }\n" +
+                "        .enemy-2d.satiro { background: linear-gradient(135deg, #27ae60, #229954); }\n" +
+                "        .enemy-2d.satiro::before { content: '🐐'; }\n" +
+                "        .enemy-2d.dragondehielo { background: linear-gradient(135deg, #3498db, #5dade2); }\n" +
+                "        .enemy-2d.dragondehielo::before { content: '❄️'; }\n" +
+                "        .enemy-2d.dragondefuego { background: linear-gradient(135deg, #e74c3c, #ec7063); }\n" +
+                "        .enemy-2d.dragondefuego::before { content: '🔥'; }\n" +
+                "        .enemy-2d.angelcaido { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.angelcaido::before { content: '😇'; }\n" +
+                "        .enemy-2d.espectro { background: linear-gradient(135deg, #9b59b6, #8e44ad); }\n" +
+                "        .enemy-2d.espectro::before { content: '👻'; }\n" +
+                "        .enemy-2d.reyzombie { background: linear-gradient(135deg, #27ae60, #229954); }\n" +
+                "        .enemy-2d.reyzombie::before { content: '👑'; }\n" +
+                "        .enemy-2d.reinaarana { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.reinaarana::before { content: '🕷️'; }\n" +
+                "        .enemy-2d.ogro { background: linear-gradient(135deg, #e67e22, #d35400); }\n" +
+                "        .enemy-2d.ogro::before { content: '👹'; }\n" +
+                "        .enemy-2d.duende { background: linear-gradient(135deg, #27ae60, #229954); }\n" +
+                "        .enemy-2d.duende::before { content: '🧚'; }\n" +
+                "        .enemy-2d.sombra { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.sombra::before { content: '🌑'; }\n" +
+                "        .enemy-2d.bestia { background: linear-gradient(135deg, #e74c3c, #c0392b); }\n" +
+                "        .enemy-2d.bestia::before { content: '🐺'; }\n" +
+                "        .enemy-2d.monstruo { background: linear-gradient(135deg, #8e44ad, #9b59b6); }\n" +
+                "        .enemy-2d.monstruo::before { content: '👾'; }\n" +
+                "        .enemy-2d.criatura { background: linear-gradient(135deg, #3498db, #2980b9); }\n" +
+                "        .enemy-2d.criatura::before { content: '🦎'; }\n" +
+                "        .enemy-2d.abominacion { background: linear-gradient(135deg, #c0392b, #a93226); }\n" +
+                "        .enemy-2d.abominacion::before { content: '💀'; }\n" +
+                "        .enemy-2d.terror { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.terror::before { content: '😱'; }\n" +
+                "        .enemy-2d.horror { background: linear-gradient(135deg, #7f8c8d, #95a5a6); }\n" +
+                "        .enemy-2d.horror::before { content: '👁️'; }\n" +
+                "        .enemy-2d.necromante { background: linear-gradient(135deg, #8e44ad, #9b59b6); }\n" +
+                "        .enemy-2d.necromante::before { content: '🧙‍♂️'; }\n" +
+                "        .enemy-2d.hechicero { background: linear-gradient(135deg, #3498db, #5dade2); }\n" +
+                "        .enemy-2d.hechicero::before { content: '🧙'; }\n" +
+                "        .enemy-2d.conjurador { background: linear-gradient(135deg, #e74c3c, #ec7063); }\n" +
+                "        .enemy-2d.conjurador::before { content: '🔮'; }\n" +
+                "        .enemy-2d.invocador { background: linear-gradient(135deg, #9b59b6, #8e44ad); }\n" +
+                "        .enemy-2d.invocador::before { content: '🌟'; }\n" +
+                "        .enemy-2d.chaman { background: linear-gradient(135deg, #27ae60, #229954); }\n" +
+                "        .enemy-2d.chaman::before { content: '🪶'; }\n" +
+                "        .enemy-2d.sacerdoteoscuro { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.sacerdoteoscuro::before { content: '⚫'; }\n" +
+                "        .enemy-2d.caballernegro { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.caballernegro::before { content: '⚔️'; }\n" +
+                "        .enemy-2d.guerrero { background: linear-gradient(135deg, #e67e22, #d35400); }\n" +
+                "        .enemy-2d.guerrero::before { content: '🗡️'; }\n" +
+                "        .enemy-2d.paladincaido { background: linear-gradient(135deg, #95a5a6, #7f8c8d); }\n" +
+                "        .enemy-2d.paladincaido::before { content: '🛡️'; }\n" +
+                "        .enemy-2d.mercenario { background: linear-gradient(135deg, #7f8c8d, #95a5a6); }\n" +
+                "        .enemy-2d.mercenario::before { content: '🗡️'; }\n" +
+                "        .enemy-2d.gladiador { background: linear-gradient(135deg, #e74c3c, #c0392b); }\n" +
+                "        .enemy-2d.gladiador::before { content: '⚔️'; }\n" +
+                "        .enemy-2d.barbaro { background: linear-gradient(135deg, #8b4513, #a0522d); }\n" +
+                "        .enemy-2d.barbaro::before { content: '🪓'; }\n" +
+                "        .enemy-2d.valkiria { background: linear-gradient(135deg, #3498db, #5dade2); }\n" +
+                "        .enemy-2d.valkiria::before { content: '⚔️'; }\n" +
+                "        .enemy-2d.amazona { background: linear-gradient(135deg, #27ae60, #229954); }\n" +
+                "        .enemy-2d.amazona::before { content: '🏹'; }\n" +
+                "        .enemy-2d.cazadora { background: linear-gradient(135deg, #e67e22, #d35400); }\n" +
+                "        .enemy-2d.cazadora::before { content: '🏹'; }\n" +
+                "        .enemy-2d.ranger { background: linear-gradient(135deg, #27ae60, #229954); }\n" +
+                "        .enemy-2d.ranger::before { content: '🌲'; }\n" +
+                "        .enemy-2d.explorador { background: linear-gradient(135deg, #7f8c8d, #95a5a6); }\n" +
+                "        .enemy-2d.explorador::before { content: '🗺️'; }\n" +
+                "        .enemy-2d.aventurero { background: linear-gradient(135deg, #f39c12, #e67e22); }\n" +
+                "        .enemy-2d.aventurero::before { content: '🎒'; }\n" +
+                "        .enemy-2d.alquimista { background: linear-gradient(135deg, #9b59b6, #8e44ad); }\n" +
+                "        .enemy-2d.alquimista::before { content: '⚗️'; }\n" +
+                "        .enemy-2d.ingeniero { background: linear-gradient(135deg, #7f8c8d, #95a5a6); }\n" +
+                "        .enemy-2d.ingeniero::before { content: '⚙️'; }\n" +
+                "        .enemy-2d.artificiero { background: linear-gradient(135deg, #e67e22, #d35400); }\n" +
+                "        .enemy-2d.artificiero::before { content: '🔧'; }\n" +
+                "        .enemy-2d.magoguerra { background: linear-gradient(135deg, #e74c3c, #c0392b); }\n" +
+                "        .enemy-2d.magoguerra::before { content: '🔥'; }\n" +
+                "        .enemy-2d.hechicerosangre { background: linear-gradient(135deg, #8e44ad, #9b59b6); }\n" +
+                "        .enemy-2d.hechicerosangre::before { content: '🩸'; }\n" +
+                "        .enemy-2d.brujo { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.brujo::before { content: '🪄'; }\n" +
+                "        .enemy-2d.tifon { background: linear-gradient(135deg, #3498db, #2980b9); }\n" +
+                "        .enemy-2d.tifon::before { content: '🌪️'; }\n" +
+                "        .enemy-2d.cronos { background: linear-gradient(135deg, #7f8c8d, #95a5a6); }\n" +
+                "        .enemy-2d.cronos::before { content: '⏰'; }\n" +
+                "        .enemy-2d.hades { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.hades::before { content: '👹'; }\n" +
+                "        .enemy-2d.ares { background: linear-gradient(135deg, #e74c3c, #c0392b); }\n" +
+                "        .enemy-2d.ares::before { content: '⚔️'; }\n" +
+                "        .enemy-2d.zeus { background: linear-gradient(135deg, #3498db, #5dade2); }\n" +
+                "        .enemy-2d.zeus::before { content: '⚡'; }\n" +
+                "        .enemy-2d.poseidon { background: linear-gradient(135deg, #3498db, #2980b9); }\n" +
+                "        .enemy-2d.poseidon::before { content: '🌊'; }\n" +
+                "        .enemy-2d.dragonanciano { background: linear-gradient(135deg, #8e44ad, #9b59b6); }\n" +
+                "        .enemy-2d.dragonanciano::before { content: '🐲'; }\n" +
+                "        .enemy-2d.wyvern { background: linear-gradient(135deg, #27ae60, #229954); }\n" +
+                "        .enemy-2d.wyvern::before { content: '🐉'; }\n" +
+                "        .enemy-2d.dracolich { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.dracolich::before { content: '💀'; }\n" +
+                "        .enemy-2d.serpientegigante { background: linear-gradient(135deg, #27ae60, #229954); }\n" +
+                "        .enemy-2d.serpientegigante::before { content: '🐍'; }\n" +
+                "        .enemy-2d.bestiaabismo { background: linear-gradient(135deg, #8e44ad, #9b59b6); }\n" +
+                "        .enemy-2d.bestiaabismo::before { content: '👹'; }\n" +
+                "        .enemy-2d.demoniomayor { background: linear-gradient(135deg, #c0392b, #a93226); }\n" +
+                "        .enemy-2d.demoniomayor::before { content: '😈'; }\n" +
+                "        .enemy-2d.arcangel { background: linear-gradient(135deg, #3498db, #5dade2); }\n" +
+                "        .enemy-2d.arcangel::before { content: '😇'; }\n" +
+                "        .enemy-2d.serafin { background: linear-gradient(135deg, #f39c12, #e67e22); }\n" +
+                "        .enemy-2d.serafin::before { content: '👼'; }\n" +
+                "        .enemy-2d.querubincaido { background: linear-gradient(135deg, #95a5a6, #7f8c8d); }\n" +
+                "        .enemy-2d.querubincaido::before { content: '😈'; }\n" +
+                "        .enemy-2d.tentaculo { background: linear-gradient(135deg, #3498db, #2980b9); }\n" +
+                "        .enemy-2d.tentaculo::before { content: '🐙'; }\n" +
+                "        .enemy-2d.ojovigilante { background: linear-gradient(135deg, #e74c3c, #c0392b); }\n" +
+                "        .enemy-2d.ojovigilante::before { content: '👁️'; }\n" +
+                "        .enemy-2d.guardian { background: linear-gradient(135deg, #7f8c8d, #95a5a6); }\n" +
+                "        .enemy-2d.guardian::before { content: '🛡️'; }\n" +
+                "        .enemy-2d.golempiedra { background: linear-gradient(135deg, #7f8c8d, #95a5a6); }\n" +
+                "        .enemy-2d.golempiedra::before { content: '🗿'; }\n" +
+                "        .enemy-2d.golemfuego { background: linear-gradient(135deg, #e74c3c, #c0392b); }\n" +
+                "        .enemy-2d.golemfuego::before { content: '🔥'; }\n" +
+                "        .enemy-2d.golemhielo { background: linear-gradient(135deg, #3498db, #5dade2); }\n" +
+                "        .enemy-2d.golemhielo::before { content: '❄️'; }\n" +
+                "        .enemy-2d.golemsombra { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.golemsombra::before { content: '🌑'; }\n" +
+                "        .enemy-2d.constructo { background: linear-gradient(135deg, #7f8c8d, #95a5a6); }\n" +
+                "        .enemy-2d.constructo::before { content: '⚙️'; }\n" +
+                "        .enemy-2d.autómata { background: linear-gradient(135deg, #95a5a6, #7f8c8d); }\n" +
+                "        .enemy-2d.autómata::before { content: '🤖'; }\n" +
+                "        .enemy-2d.faraon { background: linear-gradient(135deg, #f39c12, #e67e22); }\n" +
+                "        .enemy-2d.faraon::before { content: '👑'; }\n" +
+                "        .enemy-2d.momia { background: linear-gradient(135deg, #ecf0f1, #bdc3c7); }\n" +
+                "        .enemy-2d.momia::before { content: '🧟'; }\n" +
+                "        .enemy-2d.anubis { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.anubis::before { content: '🐺'; }\n" +
+                "        .enemy-2d.basilisco { background: linear-gradient(135deg, #27ae60, #229954); }\n" +
+                "        .enemy-2d.basilisco::before { content: '🐍'; }\n" +
+                "        .enemy-2d.quimera { background: linear-gradient(135deg, #e74c3c, #c0392b); }\n" +
+                "        .enemy-2d.quimera::before { content: '🦁'; }\n" +
+                "        .enemy-2d.grifo { background: linear-gradient(135deg, #f39c12, #e67e22); }\n" +
+                "        .enemy-2d.grifo::before { content: '🦅'; }\n" +
+                "        .enemy-2d.centauro { background: linear-gradient(135deg, #8b4513, #a0522d); }\n" +
+                "        .enemy-2d.centauro::before { content: '🐴'; }\n" +
+                "        .enemy-2d.satirosalvaje { background: linear-gradient(135deg, #27ae60, #229954); }\n" +
+                "        .enemy-2d.satirosalvaje::before { content: '🐐'; }\n" +
+                "        .enemy-2d.fauno { background: linear-gradient(135deg, #7f8c8d, #95a5a6); }\n" +
+                "        .enemy-2d.fauno::before { content: '🎵'; }\n" +
+                "        .enemy-2d.ninfa { background: linear-gradient(135deg, #3498db, #5dade2); }\n" +
+                "        .enemy-2d.ninfa::before { content: '🧚'; }\n" +
+                "        .enemy-2d.driade { background: linear-gradient(135deg, #27ae60, #229954); }\n" +
+                "        .enemy-2d.driade::before { content: '🌳'; }\n" +
+                "        .enemy-2d.sirena { background: linear-gradient(135deg, #3498db, #2980b9); }\n" +
+                "        .enemy-2d.sirena::before { content: '🧜'; }\n" +
+                "        .enemy-2d.triton { background: linear-gradient(135deg, #3498db, #5dade2); }\n" +
+                "        .enemy-2d.triton::before { content: '🔱'; }\n" +
+                "        .enemy-2d.hombrepez { background: linear-gradient(135deg, #3498db, #2980b9); }\n" +
+                "        .enemy-2d.hombrepez::before { content: '🐟'; }\n" +
+                "        .enemy-2d.krakenmenor { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.krakenmenor::before { content: '🦑'; }\n" +
+                "        .enemy-2d.medusa { background: linear-gradient(135deg, #8e44ad, #9b59b6); }\n" +
+                "        .enemy-2d.medusa::before { content: '🐍'; }\n" +
+                "        .enemy-2d.escorpiongigante { background: linear-gradient(135deg, #e74c3c, #c0392b); }\n" +
+                "        .enemy-2d.escorpiongigante::before { content: '🦂'; }\n" +
+                "        .enemy-2d.aranagigante { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.aranagigante::before { content: '🕷️'; }\n" +
+                "        .enemy-2d.lobofenris { background: linear-gradient(135deg, #7f8c8d, #95a5a6); }\n" +
+                "        .enemy-2d.lobofenris::before { content: '🐺'; }\n" +
+                "        .enemy-2d.cerbero { background: linear-gradient(135deg, #2c3e50, #34495e); }\n" +
+                "        .enemy-2d.cerbero::before { content: '🐕‍🦺'; }\n" +
+                "        .enemy-2d.pegaso { background: linear-gradient(135deg, #f39c12, #e67e22); }\n" +
+                "        .enemy-2d.pegaso::before { content: '🐴'; }\n" +
+                "        .enemy-2d.unicorniocaído { background: linear-gradient(135deg, #95a5a6, #7f8c8d); }\n" +
+                "        .enemy-2d.unicorniocaído::before { content: '🦄'; }\n" +
+                "        .enemy-2d.hipogrifo { background: linear-gradient(135deg, #7f8c8d, #95a5a6); }\n" +
+                "        .enemy-2d.hipogrifo::before { content: '🦅'; }\n" +
+                "        .enemy-2d.fenixmenor { background: linear-gradient(135deg, #e74c3c, #f39c12); }\n" +
+                "        .enemy-2d.fenixmenor::before { content: '🔥'; }\n" +
                 "        .stat-item { display: flex; align-items: center; margin: 10px 0; background: rgba(78,205,196,0.1); padding: 8px; border-radius: 8px; border: 1px solid #4ecdc4; }\n" +
                 "        .stat-label { font-size: 0.7rem; margin-right: 8px; min-width: 60px; }\n" +
                 "        .stat-bar { flex: 1; height: 15px; background: rgba(0,0,0,0.5); border-radius: 8px; overflow: hidden; }\n" +
@@ -499,6 +751,111 @@ public class JuegoServidor2D {
                 "            else if (enemyType.includes('lobo')) enemy.classList.add('lobo');\n" +
                 "            else if (enemyType.includes('murciélago') || enemyType.includes('murcielago')) enemy.classList.add('murcielago');\n" +
                 "            else if (enemyType.includes('fantasma')) enemy.classList.add('fantasma');\n" +
+                "            else if (enemyType.includes('gigante')) enemy.classList.add('gigante');\n" +
+                "            else if (enemyType.includes('ninja')) enemy.classList.add('ninja');\n" +
+                "            else if (enemyType.includes('pirata')) enemy.classList.add('pirata');\n" +
+                "            else if (enemyType.includes('vikingo')) enemy.classList.add('vikingo');\n" +
+                "            else if (enemyType.includes('samurai')) enemy.classList.add('samurai');\n" +
+                "            else if (enemyType.includes('caballero')) enemy.classList.add('caballero');\n" +
+                "            else if (enemyType.includes('arquero')) enemy.classList.add('arquero');\n" +
+                "            else if (enemyType.includes('asesino')) enemy.classList.add('asesino');\n" +
+                "            else if (enemyType.includes('bruja')) enemy.classList.add('bruja');\n" +
+                "            else if (enemyType.includes('elemental')) enemy.classList.add('elemental');\n" +
+                "            else if (enemyType.includes('gargola')) enemy.classList.add('gargola');\n" +
+                "            else if (enemyType.includes('minotauro')) enemy.classList.add('minotauro');\n" +
+                "            else if (enemyType.includes('hidra')) enemy.classList.add('hidra');\n" +
+                "            else if (enemyType.includes('fenix') || enemyType.includes('fénix')) enemy.classList.add('fenix');\n" +
+                "            else if (enemyType.includes('leviatan')) enemy.classList.add('leviatan');\n" +
+                "            else if (enemyType.includes('kraken')) enemy.classList.add('kraken');\n" +
+                "            else if (enemyType.includes('ciclope')) enemy.classList.add('ciclope');\n" +
+                "            else if (enemyType.includes('satiro')) enemy.classList.add('satiro');\n" +
+                "            else if (enemyType.includes('dragon de hielo') || enemyType.includes('dragón de hielo')) enemy.classList.add('dragondehielo');\n" +
+                "            else if (enemyType.includes('dragon de fuego') || enemyType.includes('dragón de fuego')) enemy.classList.add('dragondefuego');\n" +
+                "            else if (enemyType.includes('angel caido') || enemyType.includes('ángel caído')) enemy.classList.add('angelcaido');\n" +
+                "            else if (enemyType.includes('espectro')) enemy.classList.add('espectro');\n" +
+                "            else if (enemyType.includes('rey zombie')) enemy.classList.add('reyzombie');\n" +
+                "            else if (enemyType.includes('reina araña')) enemy.classList.add('reinaarana');\n" +
+                "            else if (enemyType.includes('ogro')) enemy.classList.add('ogro');\n" +
+                "            else if (enemyType.includes('duende')) enemy.classList.add('duende');\n" +
+                "            else if (enemyType.includes('sombra')) enemy.classList.add('sombra');\n" +
+                "            else if (enemyType.includes('bestia')) enemy.classList.add('bestia');\n" +
+                "            else if (enemyType.includes('monstruo')) enemy.classList.add('monstruo');\n" +
+                "            else if (enemyType.includes('criatura')) enemy.classList.add('criatura');\n" +
+                "            else if (enemyType.includes('abominacion')) enemy.classList.add('abominacion');\n" +
+                "            else if (enemyType.includes('terror')) enemy.classList.add('terror');\n" +
+                "            else if (enemyType.includes('horror')) enemy.classList.add('horror');\n" +
+                "            else if (enemyType.includes('necromante')) enemy.classList.add('necromante');\n" +
+                "            else if (enemyType.includes('hechicero')) enemy.classList.add('hechicero');\n" +
+                "            else if (enemyType.includes('conjurador')) enemy.classList.add('conjurador');\n" +
+                "            else if (enemyType.includes('invocador')) enemy.classList.add('invocador');\n" +
+                "            else if (enemyType.includes('chaman')) enemy.classList.add('chaman');\n" +
+                "            else if (enemyType.includes('sacerdote oscuro')) enemy.classList.add('sacerdoteoscuro');\n" +
+                "            else if (enemyType.includes('caballero negro')) enemy.classList.add('caballernegro');\n" +
+                "            else if (enemyType.includes('guerrero')) enemy.classList.add('guerrero');\n" +
+                "            else if (enemyType.includes('paladin caido')) enemy.classList.add('paladincaido');\n" +
+                "            else if (enemyType.includes('mercenario')) enemy.classList.add('mercenario');\n" +
+                "            else if (enemyType.includes('gladiador')) enemy.classList.add('gladiador');\n" +
+                "            else if (enemyType.includes('barbaro')) enemy.classList.add('barbaro');\n" +
+                "            else if (enemyType.includes('valkiria')) enemy.classList.add('valkiria');\n" +
+                "            else if (enemyType.includes('amazona')) enemy.classList.add('amazona');\n" +
+                "            else if (enemyType.includes('cazadora')) enemy.classList.add('cazadora');\n" +
+                "            else if (enemyType.includes('ranger')) enemy.classList.add('ranger');\n" +
+                "            else if (enemyType.includes('explorador')) enemy.classList.add('explorador');\n" +
+                "            else if (enemyType.includes('aventurero')) enemy.classList.add('aventurero');\n" +
+                "            else if (enemyType.includes('alquimista')) enemy.classList.add('alquimista');\n" +
+                "            else if (enemyType.includes('ingeniero')) enemy.classList.add('ingeniero');\n" +
+                "            else if (enemyType.includes('artificiero')) enemy.classList.add('artificiero');\n" +
+                "            else if (enemyType.includes('mago de guerra')) enemy.classList.add('magoguerra');\n" +
+                "            else if (enemyType.includes('hechicero de sangre')) enemy.classList.add('hechicerosangre');\n" +
+                "            else if (enemyType.includes('brujo')) enemy.classList.add('brujo');\n" +
+                "            else if (enemyType.includes('tifon')) enemy.classList.add('tifon');\n" +
+                "            else if (enemyType.includes('cronos')) enemy.classList.add('cronos');\n" +
+                "            else if (enemyType.includes('hades')) enemy.classList.add('hades');\n" +
+                "            else if (enemyType.includes('ares')) enemy.classList.add('ares');\n" +
+                "            else if (enemyType.includes('zeus')) enemy.classList.add('zeus');\n" +
+                "            else if (enemyType.includes('poseidon')) enemy.classList.add('poseidon');\n" +
+                "            else if (enemyType.includes('dragon anciano')) enemy.classList.add('dragonanciano');\n" +
+                "            else if (enemyType.includes('wyvern')) enemy.classList.add('wyvern');\n" +
+                "            else if (enemyType.includes('dracolich')) enemy.classList.add('dracolich');\n" +
+                "            else if (enemyType.includes('serpiente gigante')) enemy.classList.add('serpientegigante');\n" +
+                "            else if (enemyType.includes('bestia del abismo')) enemy.classList.add('bestiaabismo');\n" +
+                "            else if (enemyType.includes('demonio mayor')) enemy.classList.add('demoniomayor');\n" +
+                "            else if (enemyType.includes('arcangel')) enemy.classList.add('arcangel');\n" +
+                "            else if (enemyType.includes('serafin')) enemy.classList.add('serafin');\n" +
+                "            else if (enemyType.includes('querubin caido')) enemy.classList.add('querubincaido');\n" +
+                "            else if (enemyType.includes('tentaculo')) enemy.classList.add('tentaculo');\n" +
+                "            else if (enemyType.includes('ojo vigilante')) enemy.classList.add('ojovigilante');\n" +
+                "            else if (enemyType.includes('guardian')) enemy.classList.add('guardian');\n" +
+                "            else if (enemyType.includes('golem de piedra')) enemy.classList.add('golempiedra');\n" +
+                "            else if (enemyType.includes('golem de fuego')) enemy.classList.add('golemfuego');\n" +
+                "            else if (enemyType.includes('golem de hielo')) enemy.classList.add('golemhielo');\n" +
+                "            else if (enemyType.includes('golem de sombra')) enemy.classList.add('golemsombra');\n" +
+                "            else if (enemyType.includes('constructo')) enemy.classList.add('constructo');\n" +
+                "            else if (enemyType.includes('autómata')) enemy.classList.add('autómata');\n" +
+                "            else if (enemyType.includes('faraon')) enemy.classList.add('faraon');\n" +
+                "            else if (enemyType.includes('momia')) enemy.classList.add('momia');\n" +
+                "            else if (enemyType.includes('anubis')) enemy.classList.add('anubis');\n" +
+                "            else if (enemyType.includes('basilisco')) enemy.classList.add('basilisco');\n" +
+                "            else if (enemyType.includes('quimera')) enemy.classList.add('quimera');\n" +
+                "            else if (enemyType.includes('grifo')) enemy.classList.add('grifo');\n" +
+                "            else if (enemyType.includes('centauro')) enemy.classList.add('centauro');\n" +
+                "            else if (enemyType.includes('satiro salvaje')) enemy.classList.add('satirosalvaje');\n" +
+                "            else if (enemyType.includes('fauno')) enemy.classList.add('fauno');\n" +
+                "            else if (enemyType.includes('ninfa')) enemy.classList.add('ninfa');\n" +
+                "            else if (enemyType.includes('driade')) enemy.classList.add('driade');\n" +
+                "            else if (enemyType.includes('sirena')) enemy.classList.add('sirena');\n" +
+                "            else if (enemyType.includes('triton')) enemy.classList.add('triton');\n" +
+                "            else if (enemyType.includes('hombre pez')) enemy.classList.add('hombrepez');\n" +
+                "            else if (enemyType.includes('kraken menor')) enemy.classList.add('krakenmenor');\n" +
+                "            else if (enemyType.includes('medusa')) enemy.classList.add('medusa');\n" +
+                "            else if (enemyType.includes('escorpion gigante')) enemy.classList.add('escorpiongigante');\n" +
+                "            else if (enemyType.includes('araña gigante')) enemy.classList.add('aranagigante');\n" +
+                "            else if (enemyType.includes('lobo fenris')) enemy.classList.add('lobofenris');\n" +
+                "            else if (enemyType.includes('cerbero')) enemy.classList.add('cerbero');\n" +
+                "            else if (enemyType.includes('pegaso')) enemy.classList.add('pegaso');\n" +
+                "            else if (enemyType.includes('unicornio caído')) enemy.classList.add('unicorniocaído');\n" +
+                "            else if (enemyType.includes('hipogrifo')) enemy.classList.add('hipogrifo');\n" +
+                "            else if (enemyType.includes('fenix menor')) enemy.classList.add('fenixmenor');\n" +
                 "            const enemyX = Math.random() * (gameArenaSize.width - enemySize);\n" +
                 "            const enemyY = Math.random() * (gameArenaSize.height - enemySize);\n" +
                 "            enemy.style.left = enemyX + 'px'; enemy.style.top = enemyY + 'px';\n" +
